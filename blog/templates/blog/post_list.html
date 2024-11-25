@@ -4,25 +4,16 @@
     <meta charset="UTF-8">
     <title>Django Girls blog</title>
 </head>
-<body>
-    <div>
-        <h1><a href="/">Django Girls Blog</a></h1>
-    </div>
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
+{% for post in posts %}
     <div>
-        {% for post in posts %}
-           <div>
-               <p>published: {{ post.published_date }}</p>
-               <h1><a href="">{{ post.title }}</a></h1>
-               <p>{{ post.text|linebreaksbr }}</p>
-           </div>
-        {% endfor %}
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
     </div>
-
-    <div>
-        <p>published: 23.03.2014, 09:45</p>
-        <h2><a href="">My second post</a></h2>
-        <p>Lorem ipsum Pellentesque ornare sem lacinia quam venecatis vestibulum. Donec</p>
-    </div>
+{% endfor %}
 </body>
 </html>
