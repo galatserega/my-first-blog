@@ -11,14 +11,16 @@
     <h1><a href="/">Django Girls Blog</a></h1>
 </div>
 
-{% for post in posts %}
->>>>>>> 24bcb37877711c822a2032a434d33367b92fe60a
-    <div>
-        <h1><a href="/">Django Girls BloGg</a></h1>
-    </div>
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-    {% for post in posts %}
-        {{ post }}
-    {% endfor %}
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 </body>
 </html>
