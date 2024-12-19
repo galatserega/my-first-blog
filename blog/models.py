@@ -15,4 +15,6 @@ class Post(models.Model):
 
     @property
     def published(self):
-        return timezone.localtime(self.created_date).strftime('%Y-%m-%d %H:%M:%S')
+        if self.published_date:
+            return timezone.localtime(self.published_date).strftime('%Y-%m-%d %H:%M:%S')
+        return 'From born Christos'
